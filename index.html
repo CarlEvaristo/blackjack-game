@@ -3,10 +3,32 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <h1>Blackjack</h1>
-        <p id="message-el">Want to play a round?</p>
-        <p>Cards:</p>
-        <p>Sum:</p>
+
+        <div class="container">
+            <h1>Blackjack</h1>
+            <p id="message-el">Wilt u spelen?</p>
+            <div class="columns">
+                <div class="column">
+                    <p id="player-cards">Uw kaarten:</p>
+                    <p id="player-sum">Uw totaal:</p>
+                </div>
+                <div class="column-divider">
+                </div>
+                <div class="column">
+                    <p id="computer-cards">Computer kaarten:</p>
+                    <p id="computer-sum">Computer totaal:</p>
+                </div>
+            </div>
+            <!-- 1. Create a button that says START GAME. 
+            Make it call a startGame() function when clicked -->
+            <button id="btn-start" class="custom-btn" onclick="startGame()">START SPEL</button>
+            <button id="btn-pass" class="custom-btn" onclick="pass()">PAS</button>
+            <button id="btn-new" class="custom-btn" onclick="newCard()">NIEUWE KAART</button>
+            <p id="player-score"></p>
+            <p id="computer-score"></p>
+
+        </div>
+
         <script src="index.js"></script>
     </body>
 </html>
