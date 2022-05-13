@@ -92,7 +92,7 @@ function pass() {
     document.getElementById('btn-new').style.display = "none";
 
     let passAmount = passAmounts[Math.floor(Math.random() * passAmounts.length)]
-    while (computerSum < passAmount) {
+    while (computerSum < passAmount || computerSum < sum) {
         let card = getRandomCard()
         computerCards.push(card)
         computerSum += card
@@ -102,8 +102,8 @@ function pass() {
         {computerCardsEl.textContent += " " + computerCards[i]}
         computerSumEl.textContent = "Computer totaal: " + computerSum
 
-    if (computerSum === 21 && sum === 21) {
-        messageEl.textContent = "Helaas, geen winnaar."
+    if (computerSum < 22 && computerSum === sum) {
+        messageEl.textContent = "Helaas, gelijkspel."
     } else if (computerSum < 22 && computerSum > sum) {
         messageEl.textContent = "Helaas, de computer wint."
     } else {
