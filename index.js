@@ -60,7 +60,7 @@ function runGame() {
     if (sum <= 20) {
         message = "Wil je nog een kaart trekken?"
     } else if (sum === 21) {
-        message = "Hoera, je hebt 21!!!"
+        message = "Gefeliciteerd, je hebt 21!"
         hasBlackJack = true
         document.getElementById('btn-start').style.display = "inline";
         document.getElementById('btn-pass').style.display = "none";
@@ -92,7 +92,7 @@ function pass() {
     document.getElementById('btn-new').style.display = "none";
 
     let passAmount = passAmounts[Math.floor(Math.random() * passAmounts.length)]
-    while (computerSum < passAmount || computerSum < sum) {
+    while (computerSum < passAmount) {
         let card = getRandomCard()
         computerCards.push(card)
         computerSum += card
